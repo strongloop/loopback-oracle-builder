@@ -1,0 +1,6 @@
+#!/bin/bash
+
+LD_SO_CONF="/etc/ld.so.conf.d/strongloop-node-oracle.conf"
+echo "/opt/strongloop/instantclient" | sudo tee -a "$LD_SO_CONF"
+sudo ldconfig
+

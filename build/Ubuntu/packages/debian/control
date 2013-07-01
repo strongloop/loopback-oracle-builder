@@ -1,0 +1,12 @@
+Source: strongloop-node-oracle
+Maintainer: Ram Ranganathan <smitram@gmail.com>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.3
+Build-Depends: debhelper (>= 8)
+
+Package: strongloop-node-oracle
+Architecture: @@BUILD_ARCH@@
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Node.js Oracle module
+ Prebuild node oracle module along with the appropriate Oracle dependencies.
