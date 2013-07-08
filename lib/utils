@@ -61,6 +61,10 @@ function ubuntu_check() {
     export BUILD_PLATFORM="Ubuntu"
     return 0
   fi
+  if [[ "$desc" =~ Debian.* ]]; then
+    export BUILD_PLATFORM="Ubuntu"
+    return 0
+  fi
 
   return 1
 
