@@ -145,6 +145,21 @@ function check_macosx() {
 
 }  #  End of function  determine_linux_distro.
 
+function check_windows() {
+  #  Check if we have uname.
+  $(which uname > /dev/null 2>&1) || return 1
+
+  export BUILD_OS=$(uname -s)
+  if [ "$BUILD_OS" = "CYGWIN_NT-6.1-WOW64" ]; then
+    export BUILD_ARCH=$(uname -m)
+    export BUILD_PLATFORM="Windows"
+    return 0
+  fi
+
+  return 1
+
+}  #  End of function  determine_linux_distro.
+
 
 #
 #  Print env variables for package, version, platform, os and architecture.
@@ -170,7 +185,7 @@ function print_env_variables() {
 #    detect_platform
 #
 function detect_platform() {
-  determine_linux_distro || check_macosx || die "Unsupported platform";
+  determine_linux_distro || check_macosx || check_windows || die "Unsupported platform";
   print_env_variables
   return 0
 
