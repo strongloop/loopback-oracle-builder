@@ -72,6 +72,7 @@ function create_ic_dso_symlinks() {
     zdso=$(ls ${dso}.*.* | head -n 1)
     ln -sf $zdso $dso
   done
+  ln -sf libnnz12.so libnnz11.so
 
   popd > /dev/null
 
