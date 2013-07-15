@@ -1,5 +1,0 @@
-#!/bin/bash
-
-sudo rm -f "/etc/ld.so.conf.d/strongloop-node-oracle.conf"
-sudo ldconfig
-
