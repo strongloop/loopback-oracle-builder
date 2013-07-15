@@ -143,7 +143,7 @@ function install_node_oracle_module() {
 
   pushd "$TEMP_BUILD_DIR/install" > /dev/null
   pwd
-  if npm install raymondfeng/oracle; then
+  if npm install raymondfeng/node-oracle; then
     print_message ""
     print_message "- Local install/build completed."
   else
