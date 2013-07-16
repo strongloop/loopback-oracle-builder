@@ -1,7 +1,7 @@
-asteroid-oracle-builder
+loopback-oracle-builder
 =======================
 
-Asteroid Oracle Builder
+Loopback Oracle Builder
 
 
 
@@ -43,9 +43,9 @@ To build the asteriod-oracle bits, simply run:
 The built package can be found in the build/$platform directory and should
 be named something of the form:
 
-    asteroid-oracle_${platform}_${version}_${arch}.tar.gz
+    loopback-oracle_${platform}_${version}_${arch}.tar.gz
 
-    Example: asteroid-oracle_MacOSX_0.1-0_x86_64.tar.gz
+    Example: loopback-oracle_MacOSX_0.1-0_x86_64.tar.gz
 
 
 The packages need to be uploaded to a public site (ala www.strongloop.com)
