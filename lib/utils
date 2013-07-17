@@ -2,11 +2,9 @@
 
 thisdir=$(dirname "${BASH_SOURCE[0]}")
 export BUILD_PACKAGE="loopback-oracle"
-export BUILD_VERSION=$(cat $thisdir/../VERSION)
 
 ORA_PACKAGES_DIR=$(cd -P -- "$thisdir/../deps/oracle" && pwd -P)
 
-BUILD_OS="Unknown"
 BUILD_ARCH="Unknown"
 BUILD_PLATFORM="Unknown"
 
@@ -43,65 +41,6 @@ function print_message() {
 
 
 #
-#  Determine linux distro.
-#
-#  Examples:
-#    determine_linux_distro
-#
-function determine_linux_distro() {
-  #  Check if we have uname.
-  $(which uname > /dev/null 2>&1) || return 1
-
-  export BUILD_OS=$(uname -s)
-  if [[ "$BUILD_OS" =~ Linux.* ]]; then
-    export BUILD_ARCH=$(uname -m)
-    export BUILD_PLATFORM="Linux"
-    return 0
-  fi
-
-  return 1
-
-}  #  End of function  determine_linux_distro.
-
-
-#
-#  Determine if Mac OSX
-#
-#  Examples:
-#    check_macosx
-#
-function check_macosx() {
-  #  Check if we have uname.
-  $(which uname > /dev/null 2>&1) || return 1
-
-  export BUILD_OS=$(uname -s)
-  if [ "$BUILD_OS" = "Darwin" ]; then
-    export BUILD_ARCH=$(uname -m)
-    export BUILD_PLATFORM="MacOSX"
-    return 0
-  fi
-
-  return 1
-
-}  #  End of function  determine_linux_distro.
-
-function check_windows() {
-  #  Check if we have uname.
-  $(which uname > /dev/null 2>&1) || return 1
-
-  export BUILD_OS=$(uname -s)
-  if [ "$BUILD_OS" = "CYGWIN_NT-6.1-WOW64" ]; then
-    export BUILD_ARCH=$(uname -m)
-    export BUILD_PLATFORM="Windows"
-    return 0
-  fi
-
-  return 1
-
-}  #  End of function  determine_linux_distro.
-
-
-#
 #  Print env variables for package, version, platform, os and architecture.
 #
 #  Examples:
@@ -111,7 +50,6 @@ function print_env_variables() {
    print_message "-  Package = $BUILD_PACKAGE"
    print_message "-  Version = $BUILD_VERSION"
    print_message "- Platform = $BUILD_PLATFORM"
-   print_message "-       OS = $BUILD_OS"
    print_message "-     Arch = $BUILD_ARCH"
 
 }  #  End of function  print_env_variables.
@@ -125,7 +63,12 @@ function print_env_variables() {
 #    detect_platform
 #
 function detect_platform() {
-  determine_linux_distro || check_macosx || check_windows || die "Unsupported platform";
+  info=$(node ${thisdir}/detect.js)
+
+  export BUILD_PLATFORM=$(echo $info|cut -f1 -d ' ')
+  export BUILD_ARCH=$(echo $info|cut -f2 -d ' ')
+  export BUILD_VERSION=$(echo $info|cut -f3 -d ' ')
+
   print_env_variables
   return 0
 

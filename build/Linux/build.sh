@@ -152,8 +152,8 @@ function install_node_oracle_module() {
 #    replace_package_gyp_binding
 #
 function replace_package_gyp_binding() {
-  cp -f "$SCRIPT_DIR/../../misc/binding.gyp"  \
-        "$TEMP_BUILD_DIR/install/node_modules/oracle/"
+  mv -f "$TEMP_BUILD_DIR/install/node_modules/oracle/binding.gyp" \
+"$TEMP_BUILD_DIR/install/node_modules/oracle/binding.gyp.off"
 
 }  #  End of function  replace_package_gyp_binding.
 
@@ -164,7 +164,7 @@ function replace_package_gyp_binding() {
 #    build_downloadable_tarball
 #
 function build_downloadable_tarball() {
-  tarball="$SCRIPT_DIR/${BUILD_PACKAGE}_${BUILD_PLATFORM}_${BUILD_VERSION}_${BUILD_ARCH}.tar"
+  tarball="$SCRIPT_DIR/${BUILD_PACKAGE}-${BUILD_PLATFORM}-${BUILD_ARCH}-${BUILD_VERSION}.tar"
   package="${tarball}.gz"
 
   ora_lib_dir=$(get_oracle_lib_dir)
