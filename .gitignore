@@ -1,4 +1,4 @@
-build/MacOSX/loopback-oracle_MacOSX_*_x86_64.tar.gz
-build/MacOSX/temp_build_dir/
+build/*/*.tar.gz
+build/*/temp_build_dir/
 .DS_Store
 
