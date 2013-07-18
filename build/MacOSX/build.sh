@@ -187,8 +187,8 @@ function initialize_package_env() {
 #    replace_package_gyp_binding
 #
 function replace_package_gyp_binding() {
-  mv -f "$TEMP_BUILD_DIR/install/node_modules/oracle/binding.gyp" \
-"$TEMP_BUILD_DIR/install/node_modules/oracle/binding.gyp.off"
+   cp -f "$SCRIPT_DIR/../../misc/binding.gyp"  \
+         "$TEMP_BUILD_DIR/install/node_modules/oracle/"
 
 }  #  End of function  replace_package_gyp_binding.
 
