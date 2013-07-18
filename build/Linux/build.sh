@@ -152,8 +152,10 @@ function install_node_oracle_module() {
 #    replace_package_gyp_binding
 #
 function replace_package_gyp_binding() {
-  cp -f "$SCRIPT_DIR/../../misc/binding.gyp"  \
-        "$TEMP_BUILD_DIR/install/node_modules/oracle/"
+   # cp -f "$SCRIPT_DIR/../../misc/binding.gyp" "$TEMP_BUILD_DIR/install/node_modules/oracle/"
+   # Remove package.json to avoid rebuild
+   rm -f "$TEMP_BUILD_DIR/install/node_modules/oracle/package.json"
+
 
 }  #  End of function  replace_package_gyp_binding.
 
