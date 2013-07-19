@@ -1,7 +1,9 @@
 loopback-oracle-builder
 =======================
 
-Loopback Oracle Builder
+Loopback Oracle Builder builds [node-oracle](https://github.com/strongloop/node-oracle) module on various target
+platforms, package the [Oracle instance client](http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html)
+to create an installable archive to faciliate the installation of node-oracle as a dependency.
 
 
 
@@ -29,23 +31,25 @@ On RHEL based systems, install the following RPMs.
     sudo yum install @development-tools
     sudo yum install fedora-packager
 
-
+On Windows systems, install cygwin and Visual Studio.
 
 To Build:
 ---------
-Currently supported build environments are: Ubuntu (32+64 bit),
-RHEL(32+64 bit) and Mac OSX (64 bit only).
+Currently supported build environments are: Linux (RHEL, CentOS, Debian, Ubuntu, Fedora) (32 & 64 bit),
+Mac OSX (64 bit only), and Windows with cygwin (32 & 64 bit).
 
-To build the asteriod-oracle bits, simply run:
+To build the loopback-oracle bits, simply run:
 
     make   #   Internally all this does is call ./build/bin.sh
+    or
+    ./build/bin.sh
 
 The built package can be found in the build/$platform directory and should
 be named something of the form:
 
-    loopback-oracle_${platform}_${version}_${arch}.tar.gz
+    loopback-oracle-${platform}-${arch}-${version}.tar.gz
 
-    Example: loopback-oracle_MacOSX_0.1-0_x86_64.tar.gz
+    Example: loopback-oracle-MacOSX-x64-0.0-1.tar.gz
 
 
 The packages need to be uploaded to a public site (ala www.strongloop.com)
