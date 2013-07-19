@@ -63,7 +63,7 @@ function print_env_variables() {
 #    detect_platform
 #
 function detect_platform() {
-  info=$(node ${thisdir}/detect.js)
+  info=$(node ../lib/detect.js)
 
   export BUILD_PLATFORM=$(echo $info|cut -f1 -d ' ')
   export BUILD_ARCH=$(echo $info|cut -f2 -d ' ')
