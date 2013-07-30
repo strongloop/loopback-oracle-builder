@@ -238,7 +238,8 @@ function build_downloadable_tarball() {
 
   pushd "$TEMP_BUILD_DIR/tarball" > /dev/null
   cp -r "$TEMP_BUILD_DIR/install/node_modules"/*  ./
-  cp -r "$ora_lib_dir"/*  instantclient/ 
+  # use -a to presever symbolic links
+  cp -a "$ora_lib_dir"/*  instantclient/ 
 
   print_message "- Creating downloadable tarball ..."
   tar -cf "$tarball" oracle/ instantclient/
