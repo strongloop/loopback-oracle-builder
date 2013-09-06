@@ -43,7 +43,7 @@ function extract_ic_packages() {
   for pkg in $(echo ${packages[@]}); do
     print_message ""
     print_message "- Extracting package $pkg ..."
-    zf=$(ls $zipdir/${package_prefix}*-$pkg-${build_os}.x64-*.zip | head -1)
+    zf=$(ls $zipdir/${package_prefix}*-$pkg-${build_os}.${BUILD_ARCH}-*.zip | head -1)
     if [ -n "$DEBUG_BUILD_SCRIPT" ]; then
       print_message "    zip file = $zf"
       print_message "    dest dir = $pkg"
