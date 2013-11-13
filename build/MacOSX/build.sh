@@ -143,6 +143,8 @@ function install_node_oracle_module() {
 
   pushd "$TEMP_BUILD_DIR/install" > /dev/null
   pwd
+  # Fool npm so that it will install the module locally
+  echo '{}' > package.json
   if npm install strongloop/node-oracle; then
     print_message ""
     print_message "- Local install/build completed."
@@ -240,6 +242,7 @@ function build_downloadable_tarball() {
   cp -r "$TEMP_BUILD_DIR/install/node_modules"/*  ./
   # use -a to presever symbolic links
   cp -a "$ora_lib_dir"/*  instantclient/ 
+  chmod -R ug+w instantclient
 
   print_message "- Creating downloadable tarball ..."
   tar -cf "$tarball" oracle/ instantclient/
