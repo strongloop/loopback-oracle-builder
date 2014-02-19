@@ -145,7 +145,7 @@ function install_node_oracle_module() {
   pwd
   # Fool npm so that it will install the module locally
   echo '{}' > package.json
-  if npm install strongloop/node-oracle; then
+  if npm install $NODE_ORACLE_MODULE; then
     print_message ""
     print_message "- Local install/build completed."
   else
