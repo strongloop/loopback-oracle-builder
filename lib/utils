@@ -8,12 +8,6 @@ ORA_PACKAGES_DIR=$(cd -P -- "$thisdir/../deps/oracle" && pwd -P)
 BUILD_ARCH="Unknown"
 BUILD_PLATFORM="Unknown"
 
-if which -s git; then
-    export NODE_ORACLE_MODULE="strongloop/node-oracle"
-else
-    export NODE_ORACLE_MODULE="http://github.com/strongloop/node-oracle/tarball/HEAD"
-fi
-
 #
 #  Print error message and exit with the specified code.
 #
@@ -75,8 +69,17 @@ function detect_platform() {
   export BUILD_PLATFORM=$(echo $info|cut -f1 -d ' ')
   export BUILD_ARCH=$(echo $info|cut -f2 -d ' ')
   export BUILD_VERSION=$(echo $info|cut -f3 -d ' ')
+  export BUILD_DRIVER_VERSION=$(echo $info|cut -f4 -d ' ')
 
-  print_env_variables
+  if which -s git; then
+    export NODE_ORACLE_MODULE="strongloop/node-oracle#$BUILD_DRIVER_VERSION"
+  else
+    export NODE_ORACLE_MODULE="http://github.com/strongloop/node-oracle/tarball/$BUILD_DRIVER_VERSION"
+  fi
+
+  if [ -z $1 ]; then
+    print_env_variables
+  fi
   return 0
 
 }  #  End of function  detect_platform.
