@@ -1,9 +1,9 @@
 loopback-oracle-builder
 =======================
 
-Loopback Oracle Builder builds [node-oracle](https://github.com/strongloop/node-oracle) module on various target
+Loopback Oracle Builder builds [strong-oracle](https://github.com/strongloop/strong-oracle) module on various target
 platforms, package the [Oracle instance client](http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html)
-to create an installable archive to faciliate the installation of node-oracle as a dependency.
+to create an installable archive to facilitate the installation of strong-oracle as a dependency.
 
 
 
