@@ -70,11 +70,16 @@ function detect_platform() {
   export BUILD_ARCH=$(echo $info|cut -f2 -d ' ')
   export BUILD_VERSION=$(echo $info|cut -f3 -d ' ')
   export BUILD_DRIVER_VERSION=$(echo $info|cut -f4 -d ' ')
+  export BUILD_DRIVER_MODULE=$(echo $info|cut -f5 -d ' ')
 
-  if which -s git; then
-    export NODE_ORACLE_MODULE="strongloop/strong-oracle#$BUILD_DRIVER_VERSION"
+  if [ "$BUILD_DRIVER_MODULE" == "undefined" ]; then
+    if which -s git; then
+      export NODE_ORACLE_MODULE="strongloop/strong-oracle#$BUILD_DRIVER_VERSION"
+    else
+      export NODE_ORACLE_MODULE="http://github.com/strongloop/strong-oracle/tarball/$BUILD_DRIVER_VERSION"
+    fi
   else
-    export NODE_ORACLE_MODULE="http://github.com/strongloop/strong-oracle/tarball/$BUILD_DRIVER_VERSION"
+    export NODE_ORACLE_MODULE=$BUILD_DRIVER_MODULE
   fi
 
   if [ -z $1 ]; then
