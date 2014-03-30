@@ -51,6 +51,7 @@ function print_env_variables() {
    print_message "-  Version = $BUILD_VERSION"
    print_message "- Platform = $BUILD_PLATFORM"
    print_message "-     Arch = $BUILD_ARCH"
+   print_message "-      ABI = $BUILD_NODE_MODULE_VERSION"
    print_message "-   Module = $NODE_ORACLE_MODULE"
 
 }  #  End of function  print_env_variables.
@@ -71,6 +72,13 @@ function detect_platform() {
   export BUILD_VERSION=$(echo $info|cut -f3 -d ' ')
   export BUILD_DRIVER_VERSION=$(echo $info|cut -f4 -d ' ')
   export BUILD_DRIVER_MODULE=$(echo $info|cut -f5 -d ' ')
+  export BUILD_NODE_MODULE_VERSION=$(echo $info|cut -f6 -d ' ')
+
+  if [ "$BUILD_NODE_MODULE_VERSION" == "undefined" ]; then
+    export BUILD_TAR_BALL=${BUILD_PACKAGE}-${BUILD_PLATFORM}-${BUILD_ARCH}-${BUILD_VERSION}.tar
+  else
+    export BUILD_TAR_BALL=${BUILD_PACKAGE}-${BUILD_PLATFORM}-${BUILD_ARCH}-abi${BUILD_NODE_MODULE_VERSION}-${BUILD_VERSION}.tar
+  fi
 
   if [ "$BUILD_DRIVER_MODULE" == "undefined" ]; then
     if which -s git; then

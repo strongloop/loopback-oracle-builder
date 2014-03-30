@@ -229,7 +229,7 @@ function package_module_and_dependencies() {
 #    build_downloadable_tarball
 #
 function build_downloadable_tarball() {
-  tarball="$SCRIPT_DIR/${BUILD_PACKAGE}-${BUILD_PLATFORM}-${BUILD_ARCH}-${BUILD_VERSION}.tar"
+  tarball="$SCRIPT_DIR/${BUILD_TAR_BALL}"
   package="${tarball}.gz"
 
   ora_lib_dir=$(get_oracle_lib_dir)

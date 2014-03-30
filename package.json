@@ -1,0 +1,33 @@
+{
+  "name": "loopback-oracle-builder",
+  "version": "1.2.0",
+  "description": "Builder for Oracle Node.js driver",
+  "main": "index.js",
+  "scripts": {
+    "install": "./bin/build.sh"
+  },
+  "config": {
+    "driverModule": "strong-oracle",
+    "bundleVersion": "1.2.0",
+    "excludeAbi": "11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/strongloop/loopback-oracle-builder.git"
+  },
+  "keywords": [
+    "StrongLoop",
+    "LoopBack",
+    "Oracle",
+    "Database",
+    "Addon"
+  ],
+  "license": {
+    "name": "StrongLoop",
+    "url": "https://github.com/strongloop/loopback-oracle-builder/blob/master/LICENSE"
+  },
+  "bugs": {
+    "url": "https://github.com/strongloop/loopback-oracle-builder/issues"
+  },
+  "homepage": "https://github.com/strongloop/loopback-oracle-builder"
+}
