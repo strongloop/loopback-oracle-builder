@@ -1,6 +1,6 @@
 {
   "name": "loopback-oracle-builder",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Builder for Oracle Node.js driver",
   "main": "index.js",
   "scripts": {
