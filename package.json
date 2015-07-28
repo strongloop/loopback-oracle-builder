@@ -7,8 +7,8 @@
     "install": "./bin/build.sh"
   },
   "config": {
-    "driverModule": "strong-oracle@1.6.4",
-    "bundleVersion": "1.6.0",
+    "driverModule": "strong-oracle@1.6.5",
+    "bundleVersion": "1.7.0",
     "excludeAbi": "11"
   },
   "repository": {

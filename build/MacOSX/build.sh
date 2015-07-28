@@ -242,6 +242,7 @@ function build_downloadable_tarball() {
   cp -r "$TEMP_BUILD_DIR/install/node_modules"/*  ./
   # use -a to presever symbolic links
   cp -a "$ora_lib_dir"/*  instantclient/ 
+  cp $ORA_PACKAGES_DIR/LICENSE instantclient/
   chmod -R ug+w instantclient
 
   print_message "- Creating downloadable tarball ..."

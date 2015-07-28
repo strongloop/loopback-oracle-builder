@@ -179,6 +179,7 @@ function build_downloadable_tarball() {
   pushd "$TEMP_BUILD_DIR/tarball" > /dev/null
   cp -r "$TEMP_BUILD_DIR/install/node_modules"/*  ./
   cp -r "$ora_lib_dir"/*  instantclient/
+  cp $ORA_PACKAGES_DIR/LICENSE instantclient/
   chmod -R ug+w instantclient
 
   print_message "- Creating downloadable tarball ..."
