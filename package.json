@@ -22,10 +22,7 @@
     "Database",
     "Addon"
   ],
-  "license": {
-    "name": "StrongLoop",
-    "url": "https://github.com/strongloop/loopback-oracle-builder/blob/master/LICENSE"
-  },
+  "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
     "url": "https://github.com/strongloop/loopback-oracle-builder/issues"
   },
