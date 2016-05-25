@@ -129,13 +129,13 @@ function get_oracle_lib_dir() {
 #    install_node_oracle_module
 #
 function install_node_oracle_module() {
-  export OCI_INCLUDE_DIR=$(get_oracle_sdk_include_dir)
+  export OCI_INC_DIR=$(get_oracle_sdk_include_dir)
   export OCI_LIB_DIR=$(get_oracle_lib_dir)
 
   print_message ""
   print_message "- Installing/Building oracledb module ..."
-  print_message "    OCI_INCLUDE_DIR = $OCI_INCLUDE_DIR"
-  print_message "        OCI_LIB_DIR = $OCI_LIB_DIR"
+  print_message "    OCI_INC_DIR = $OCI_INC_DIR"
+  print_message "    OCI_LIB_DIR = $OCI_LIB_DIR"
   print_message ""
 
   rm -rf "$TEMP_BUILD_DIR/install"
