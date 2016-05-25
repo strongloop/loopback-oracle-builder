@@ -82,9 +82,9 @@ function detect_platform() {
 
   if [ "$BUILD_DRIVER_MODULE" == "undefined" ]; then
     if which -s git; then
-      export NODE_ORACLE_MODULE="strongloop/strong-oracle#$BUILD_DRIVER_VERSION"
+      export NODE_ORACLE_MODULE="oracle/node-oracledb#$BUILD_DRIVER_VERSION"
     else
-      export NODE_ORACLE_MODULE="http://github.com/strongloop/strong-oracle/tarball/$BUILD_DRIVER_VERSION"
+      export NODE_ORACLE_MODULE="http://github.com/oracle/node-oracledb/tarball/$BUILD_DRIVER_VERSION"
     fi
   else
     export NODE_ORACLE_MODULE=$BUILD_DRIVER_MODULE

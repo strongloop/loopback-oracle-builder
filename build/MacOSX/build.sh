@@ -133,7 +133,7 @@ function install_node_oracle_module() {
   export OCI_LIB_DIR=$(get_oracle_lib_dir)
 
   print_message ""
-  print_message "- Installing/Building strong-oracle module ..."
+  print_message "- Installing/Building oracledb module ..."
   print_message "    OCI_INCLUDE_DIR = $OCI_INCLUDE_DIR"
   print_message "        OCI_LIB_DIR = $OCI_LIB_DIR"
   print_message ""
@@ -183,15 +183,15 @@ function initialize_package_env() {
 
 
 #
-#  Replace the strong-oracle package's gyp binding.
+#  Replace the oracledb package's gyp binding.
 #
 #  Example:
 #    replace_package_gyp_binding
 #
 function replace_package_gyp_binding() {
-   # cp -f "$SCRIPT_DIR/../../misc/binding.gyp" "$TEMP_BUILD_DIR/install/node_modules/strong-oracle/"
+   # cp -f "$SCRIPT_DIR/../../misc/binding.gyp" "$TEMP_BUILD_DIR/install/node_modules/oracledb/"
    # Remove package.json to avoid rebuild
-   rm -f "$TEMP_BUILD_DIR/install/node_modules/strong-oracle/package.json"
+   rm -f "$TEMP_BUILD_DIR/install/node_modules/oracledb/package.json"
 
 }  #  End of function  replace_package_gyp_binding.
 
@@ -246,7 +246,7 @@ function build_downloadable_tarball() {
   chmod -R ug+w instantclient
 
   print_message "- Creating downloadable tarball ..."
-  tar -cf "$tarball" strong-oracle/ instantclient/
+  tar -cf "$tarball" oracledb/ instantclient/
 
   print_message "- Gzipping tarball ..."
   rm -f "$package"

@@ -1,8 +1,8 @@
 # loopback-oracle-builder
 
-Loopback Oracle Builder builds [strong-oracle](https://github.com/strongloop/strong-oracle) module on various target
+Loopback Oracle Builder builds [oracledb](https://github.com/oracle/node-oracledb) module on various target
 platforms, package the [Oracle instance client](http://www.oracle.com/technetwork/database/features/instant-client/index-097480.html)
-to create an installable archive to facilitate the installation of strong-oracle as a dependency.
+to create an installable archive to facilitate the installation of oracledb as a dependency.
 
 
 ## Build Prerequisites
@@ -35,14 +35,14 @@ On Windows systems, install cygwin and Visual Studio.
 Some parameters can be configured by the "config" property in package.json.
 
     "config": {
-        "driverModule": "strong-oracle",
+        "driverModule": "oracledb",
         "bundleVersion": "1.3.0",
         "excludeAbi": "11"
     },
 
 The following properties denote how the tar ball is built:
 
-- driverModule: Name or url for the strong-oracle module, using npm dependency syntax
+- driverModule: Name or url for the oracledb module, using npm dependency syntax
 - bundleVersion: The version for the tar ball, default to package version
 - excludeAbi: true or the abi version to be excluded from the tar ball name
 
