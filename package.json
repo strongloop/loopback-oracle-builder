@@ -1,14 +1,14 @@
 {
   "name": "loopback-oracle-builder",
-  "version": "1.5.1",
+  "version": "2.0.0",
   "description": "Builder for Oracle Node.js driver",
   "main": "index.js",
   "scripts": {
     "install": "./bin/build.sh"
   },
   "config": {
-    "driverModule": "strong-oracle@1.7.0",
-    "bundleVersion": "1.8.0",
+    "driverModule": "oracledb@1.9.3",
+    "bundleVersion": "2.0.0",
     "excludeAbi": "11"
   },
   "repository": {
