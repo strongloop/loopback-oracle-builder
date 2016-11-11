@@ -89,7 +89,7 @@ function get_oracle_sdk_include_dir() {
 function get_oracle_lib_dir() {
   pushd "$TEMP_BUILD_DIR/basiclite" > /dev/null
   latest_ver=$(find . -maxdepth 1 -type d | egrep -ve '^\.$' | sort | tail -1)
-  cd "$TEMP_BUILD_DIR/sdk/${latest_ver}"/sdk/lib/msvc/vc11
+  cd "$TEMP_BUILD_DIR/sdk/${latest_ver}"/sdk/lib/msvc/vc12
   ora_client_dir=`cmd /c cd`
   popd > /dev/null
 
