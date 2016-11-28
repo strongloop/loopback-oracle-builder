@@ -8,8 +8,7 @@
   },
   "config": {
     "driverModule": "oracledb@^1.11.0",
-    "bundleVersion": "2.0.0",
-    "excludeAbi": "11"
+    "bundleVersion": "2.0.0"
   },
   "repository": {
     "type": "git",
