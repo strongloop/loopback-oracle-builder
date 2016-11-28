@@ -7,9 +7,8 @@
     "install": "./bin/build.sh"
   },
   "config": {
-    "driverModule": "oracledb@1.9.3",
-    "bundleVersion": "2.0.0",
-    "excludeAbi": "11"
+    "driverModule": "oracledb@^1.11.0",
+    "bundleVersion": "2.0.0"
   },
   "repository": {
     "type": "git",
