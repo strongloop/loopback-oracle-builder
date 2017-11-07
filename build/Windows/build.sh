@@ -209,6 +209,7 @@ function build_downloadable_tarball() {
   package="${tarball}.gz"
 
   ora_lib_dir=$(get_oracle_lib_dir)
+  ora_inc_dir=$(get_oracle_sdk_include_dir)
 
   print_message "- Cleaning old package directory ..."
   rm -rf  "$TEMP_BUILD_DIR/tarball"
@@ -216,7 +217,8 @@ function build_downloadable_tarball() {
 
   pushd "$TEMP_BUILD_DIR/tarball" > /dev/null
   cp -r "$TEMP_BUILD_DIR/install/node_modules"/*  ./
-  cp -r "$TEMP_BUILD_DIR/basiclite/instantclient_12_1"/* instantclient/
+  cp -r "$ora_lib_dir"/* instantclient/
+  cp -r "$ora_inc_dir"/../../sdk instantclient/ 
   cp $ORA_PACKAGES_DIR/LICENSE instantclient/
   chmod -R ug+w instantclient
 
