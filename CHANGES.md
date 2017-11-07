@@ -1,3 +1,15 @@
+2017-11-07, Version 2.1.0
+=========================
+
+ * Include sdk into instantclient bundle (Raymond Feng)
+
+ * Create Issue and PR Templates (#12) (Sakib Hasan)
+
+ * Add CODEOWNER file (Diana Lau)
+
+ * Upgrade oracle driver (Raymond Feng)
+
+
 2017-03-06, Version 2.0.1
 =========================
 
