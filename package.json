@@ -25,5 +25,6 @@
   "bugs": {
     "url": "https://github.com/strongloop/loopback-oracle-builder/issues"
   },
-  "homepage": "https://github.com/strongloop/loopback-oracle-builder"
+  "homepage": "https://github.com/strongloop/loopback-oracle-builder",
+  "author": "IBM Corp."
 }
